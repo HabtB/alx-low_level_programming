@@ -9,28 +9,43 @@
 
 int main(void)
 {
-	int d;
-	int e;
-	int f;
+	int d = 48;
+	int e = 49;
+	int f = 50;
 
-	for (d = 0; d <= 9; d++)
+	while ((d <= 55) && (e <= 56) && (f <= 57))
 	{
-		for (e = 1; e <= 9; e++)
+		putchar(d);
+		putchar(e);
+		putchar(f);
+
+		if ((d == 55) && (e == 56) && (f == 57))
 		{
-			for (f = 2; f <= 9; f++)
+			putchar(10);
+			d++;
+			e++;
+			f++;
+		}
+		else
+		{
+			putchar(',');
+			putchar(' ');
+		
+			if (f < 57)
+				f++;
+			else if ((e < 56) && ( f == 57))
 			{
-				if ((d < e && e < f) && (d != 55 || e != 56 || f != 57))
-				{
-					putchar(d);
-					putchar(e);
-					putchar(f);
-					putchar(',');
-					putchar(' ');
-				}
+				e++;
+				f = e + 1;
+			}
+			else
+			{
+				d++;
+				e = d + 1;
+				f = e + 1; 
 			}
 		}
 	}
 
-	putchar(10);
 	return (0);
 }
