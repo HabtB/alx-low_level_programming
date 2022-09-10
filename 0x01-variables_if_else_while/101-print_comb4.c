@@ -30,10 +30,10 @@ int main(void)
 		{
 			putchar(',');
 			putchar(' ');
-		
+
 			if (f < 57)
 				f++;
-			else if ((e < 56) && ( f == 57))
+			else if ((e < 56) && (f == 57))
 			{
 				e++;
 				f = e + 1;
@@ -42,7 +42,7 @@ int main(void)
 			{
 				d++;
 				e = d + 1;
-				f = e + 1; 
+				f = e + 1;
 			}
 		}
 	}
