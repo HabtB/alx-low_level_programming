@@ -10,11 +10,11 @@ void times_table(void)
 {
 	int x = 0;
 
-	for (x; x <= 9; x++)
+	for (; x <= 9; x++)
 	{
 		int y = 0;
 
-		for (y; y <= 9; y++)
+		for (; y <= 9; y++)
 		{
 			if ((x * y) / 10 >= 1)
 				_putchar(((x * y) / 10) + '0');
