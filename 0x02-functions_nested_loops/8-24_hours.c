@@ -24,7 +24,7 @@ void jack_bauer(void)
 			_putchar('\n');
 			mins++;
 		}
-	if (mins == 60)
+	if (mins != 60)
 		_putchar('\n');
 	hrs++;
 	}
