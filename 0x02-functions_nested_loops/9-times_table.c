@@ -19,7 +19,7 @@ void times_table(void)
 			if ((x * y) / 10 >= 1)
 				_putchar(((x * y) / 10) + '0');
 
-			else if (x >= 0)
+			else if (x >= 0 && y != 0)
 				_putchar(' ');
 
 			_putchar(((x * y) % 10) + '0');
