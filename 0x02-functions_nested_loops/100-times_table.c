@@ -1,6 +1,7 @@
+#include <stdio.h>
 #include "main.h"
 /**
- * print_times_table-prints the product of numbers ranging from 1 to 9
+ * print_times_table- prints the product of numbers ranging from 1 to 9
  * @n: integer value
  * Return: retuns nothing
  */
