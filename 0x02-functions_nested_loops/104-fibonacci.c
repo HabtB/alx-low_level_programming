@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long int a, a0, a1, b, b0, b1, c, c0, c1;
+	unsigned long int a, b, b0, b1, c, c0, c1;
 	int m, n;
 
 	a = 1;
@@ -29,6 +29,8 @@ int main(void)
 	c1 = c % 1000000000;
 	for (n = 89; n < 98; n++)
 	{
+		unsigned long int a0, a1;
+
 		printf("%lu%lu, ", c0, c1);
 		a0 = b0;
 		a1 = b1;
