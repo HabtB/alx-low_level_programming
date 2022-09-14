@@ -29,15 +29,14 @@ int main(void)
 	c1 = c % 1000000000;
 	for (n = 89; n < 98; n++)
 	{
-		unsigned long int x, y;
+		unsigned long int a1;
 
 		printf("%lu%lu, ", c0, c1);
-		x = b0;
-		y = b1;
+		a1 = b1;
 		b0 = c0;
 		b1 = c1;
-		c0 = c0 + c0 + ((y + b1) / 1000000000);
-		c1 = (y + b1) % 1000000000;
+		c0 = c0 + c0 + ((a1 + b1) / 1000000000);
+		c1 = (a1 + b1) % 1000000000;
 	}
 printf("%lu%lu\n", c0, c1);
 	return (0);
