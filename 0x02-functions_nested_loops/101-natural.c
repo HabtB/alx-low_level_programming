@@ -9,21 +9,13 @@
 int main(void)
 {
 	int i;
-	int j;
-	int sum1 = 0;
-	int sum2 = 0;
+	int sum = 0;
 
-	for (i = 1; i < 1024 / 3; i++)
-	{	int num1 = i * 3;
-		sum1 = num1 + sum1;
-	}
-
-	for (j = 1; j < 1024 / 5; j++)
+	for (i = 1; i < 1024 ; i++)
 	{
-		int num2 = j * 5;
-
-		sum2 = sum2 + num2;
+		if ((i % 3 == 0) || (i % 5 == 0))
+			sum = i + sum;
 	}
-	printf("The total sum is: %d\n", sum1 + sum2);
+	printf("%d\n", sum);
 	return (0);
 }
