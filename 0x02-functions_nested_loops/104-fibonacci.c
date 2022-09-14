@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long int a, b, b0, b1, c, c0, c1;
+	unsigned long int a, b, b1, c, c0, c1;
 	int m, n;
 
 	a = 1;
@@ -23,7 +23,6 @@ int main(void)
 		b = c;
 		c = a + b;
 	}
-	b0 = b / 1000000000;
 	b1 = b % 1000000000;
 	c0 = c / 1000000000;
 	c1 = c % 1000000000;
@@ -33,7 +32,6 @@ int main(void)
 
 		printf("%lu%lu, ", c0, c1);
 		a1 = b1;
-		b0 = c0;
 		b1 = c1;
 		c0 = c0 + c0 + ((a1 + b1) / 1000000000);
 		c1 = (a1 + b1) % 1000000000;
