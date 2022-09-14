@@ -9,25 +9,25 @@
 int main(void)
 {
 	int count;
-	int i = 1;
-	int j = 2;
+	long int i = 1;
+	long int j = 2;
 
 	for (count = 0; count < 50 ; count++)
 	{
-		int k;
+		long int k;
 
 		if (count == 0)
 		{
-			printf("%d, ", i);
-			printf("%d, ", j);
+			printf("%ld, ", i);
+			printf("%ld, ", j);
 		}
 		k = i;
 		i = j;
 		j = k + j;
 		if (count != 49)
-			printf("%d, ", j);
+			printf("%ld, ", j);
 		else
-			printf("%d", j);
+			printf("%ld", j);
 	}
 	printf("\n");
 	return (0);
