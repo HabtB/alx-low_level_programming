@@ -12,7 +12,7 @@ int main(void)
 	long int i = 1;
 	long int j = 2;
 
-	for (count = 0; count < 50 ; count++)
+	for (count = 0; count < 48; count++)
 	{
 		long int k;
 
@@ -24,7 +24,7 @@ int main(void)
 		k = i;
 		i = j;
 		j = k + j;
-		if (count != 49)
+		if (count != 47)
 			printf("%ld, ", j);
 		else
 			printf("%ld", j);
