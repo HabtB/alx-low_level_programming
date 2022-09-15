@@ -16,7 +16,7 @@ int main(void)
 	int i = 2;
 	int imax = 1;
 
-	while (i <= (int)(sqrt(n)))
+	while (i < (0.5 * n))
 	{
 		if ((int) n % i == 0)
 		{
