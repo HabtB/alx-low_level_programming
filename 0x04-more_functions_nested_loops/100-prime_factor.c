@@ -12,6 +12,7 @@ int main(void)
 {
 	double n = 612852475143;
 	double m = 612852475143;
+	int largest_pm;
 	int i = 2;
 	int imax = 1;
 
@@ -26,9 +27,9 @@ int main(void)
 		else
 			i++;
 	}
-	int largest_pm;
 
 	largest_pm = m / imax;
 
 	printf("%d\n", largest_pm);
+	return (0);
 }
