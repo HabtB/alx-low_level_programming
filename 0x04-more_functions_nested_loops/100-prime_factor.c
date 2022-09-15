@@ -10,17 +10,13 @@
 
 int main(void)
 {
-	double n = 612852475143;
-	double m = 612852475143;
-	int largest_pm;
+	unsigned long n = 1231952;
 	int i = 2;
-	int imax = 1;
 
 	while (i < (0.5 * n))
 	{
-		if ((int) n % i == 0)
+		if (n % i == 0)
 		{
-			imax = i * imax;
 			n = (double) (n / i);
 			i = 2;
 		}
@@ -28,8 +24,6 @@ int main(void)
 			i++;
 	}
 
-	largest_pm = m / imax;
-
-	printf("%d\n", largest_pm);
+	printf("%lu\n", n);
 	return (0);
 }
