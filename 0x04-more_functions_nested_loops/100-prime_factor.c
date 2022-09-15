@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	unsigned long n = 1231952;
+	unsigned long n = 612852475143;
 	int i = 2;
 
 	while (i < (0.5 * n))
