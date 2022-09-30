@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	else
 		n2 = convert2int(argv[2]);
 
-	mul = n1 *n2;
+	mul = n1 * n2;
 	printf("%d\n", mul);
 
 return (0);
