@@ -45,8 +45,7 @@ int main(int argc, char **argv)
 			coins += amount / 2;
 			amount %= 2;
 		}
-		else if (amount > 0)
-			coins += amount;
+		coins += amount;
 		printf("%d\n", coins);
 		return (0);
 	}
