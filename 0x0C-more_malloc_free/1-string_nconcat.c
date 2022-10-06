@@ -1,72 +1,67 @@
 #include "main.h"
-#include <stdlib.h>
-
-int _strlen(char *str);
 
 /**
- * string_nconcat - concatinates n strings from s2 to s1.
+ * _strlen- returns the length of the a string
+ * @s: a character array
+ *
+ * Return: returns an integer
+ */
+
+
+int _strlen(char *s)
+{
+
+	int i = 0;
+
+	if (s != NULL)
+	{
+		while (s[i] != '\0')
+		{
+			i++;
+		}
+		return (i);
+	}
+	else
+		return (0);
+}
+
+
+/**
+ * string_nconcat- concatenates strings
  * @s1: the first string
  * @s2: the second string
- * @n: the number of chars to be copied
+ * @n:  an integer value
  *
- * Return: returns 0 on success and I on failure
+ * Return: returns a concatenated string
  */
+
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	int i = 0, lens1, lens2, lenTotal;
+	unsigned int i = 0;
+	unsigned int j = 0;
+	unsigned int c1 = 0;
+	char *str;
 
-	lens1 = _strlen(s1);
-	lens2 = _strlen(s2);
-	lenTotal = lens1 + n + 1;
+	c1 = _strlen(s1);
 
-	ptr = malloc(lenTotal * sizeof(*ptr));
-	if (ptr == NULL)
-		exit(1);
+	str = malloc(sizeof(char) * (c1 + n + 1));
 
-	while (i < lenTotal)
+	if (str == NULL)
 	{
-		if (s1[i] != 0)
-			ptr[i] = s1[i];
-		else
-		{
-			int j = 0;
+		return (NULL);
+	}
 
-			while (j < n)
-			{
-				ptr[i] = s2[j];
-				j++;
-				i++;
-			}
-		}
+	for (i = 0; i < (c1); i++)
+		str[i] = s1[i];
+
+	for (j = 0; j < n; j++)
+	{
+		str[i] = s2[j];
 		i++;
 	}
-	ptr[lenTotal] = '\0';
 
-	return (ptr);
-}
+	str[c1 + n] = '\0';
 
-/**
- * _strlen - computes the length of the string
- * @str: a pointer to string
- *
- * Return: returns 0 upon success
- *
- */
-
-int _strlen(char *str)
-{
-	int count = 0;
-
-	if (*str == '\0')
-		return (0);
-
-	while (*str)
-	{
-		str++;
-		count++;
-	}
-
-	return (count);
+	return (str);
 }
