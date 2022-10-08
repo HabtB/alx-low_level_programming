@@ -19,16 +19,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (_toint(argv[1]) == 0)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	if (_toint(argv[2]) == 0)
-	{
-		printf("Error\n");
-		exit(98);
-	}
 
 	if (*argv[1] == 48)
 		num1 = 0;
