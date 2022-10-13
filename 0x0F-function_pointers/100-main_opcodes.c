@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	}
 	p = (unsigned char *)main;
 	i = 0;
-	if (x > 0)
+	if (x >= 0)
 	{
 		while (i < (x - 1))
 			printf("%02hhx ", p[i++]);
