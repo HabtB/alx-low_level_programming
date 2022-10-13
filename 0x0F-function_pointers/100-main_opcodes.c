@@ -28,7 +28,10 @@ int main(int argc, char *argv[])
 	if (x >= 0)
 	{
 		while (i < (x - 1))
-			printf("%02hhx ", p[i++]);
+		{
+			printf("%02hhx ", p[i]);
+			i++;
+		}
 		printf("%hhx\n", p[i]);
 	}
 	return (0);
