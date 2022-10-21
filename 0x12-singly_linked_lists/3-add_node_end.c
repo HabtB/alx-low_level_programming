@@ -1,57 +1,68 @@
-#include "lists.h"
+i#include "lists.h"
+
+int len(const char *str);
+list_t *create_node(const char *str);
 
 /**
- * _strlen - length of a string
- * @s: input code
- *
- * Return: length of a string
+ * add_node_end - Adds a node at the end of a linked list.
+ * @head: pointer to the first node of a linked list.
+ * @str: String to include in the node.
+ * Return: A pointer to the head of the linked list.
  */
-
-int _strlen(const char *s)
-{
-len = 0;
-while (*s)
-{
-s++;
-len++;
-}
-return (len);
-}
-
-/**
- * add_node_end - adds new nodes at the end
- * @head: address new head
- * @str: string to add
- *
- * Return: head
- */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *new_node;
-list_t *aux;
+	list_t *tmp;
+	list_t *new_node;
 
-aux = *head;
 
-if (*head)
-{
-while (aux->next)
-{
-aux = aux->next;
+	tmp = *head;
+	if (head == NULL)
+		return (NULL);
+	new_node = create_node(str);
+	if (new_node == NULL)
+		return (NULL);
+	if (*head == NULL) /*Initilizing the list with the first node*/
+	{
+		*head = new_node;
+		return (*head);
+	}
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new_node;
+	return (*head);
 }
-}
-new_node = malloc(sizeof(list_t));
-if (new_node == NULL)
-{
-printf("Error\n");
-return (0);
-}
-new_node->len = _strlen(str);
-new_node->next = NULL;
 
-if (aux)
-aux->next = new_node;
-else
-*head = new_node;
-return (new_node);
+/**
+ * create_node - Creates a new node.
+ * @str: String to add to the node.
+ * Return: A pointer to the allocated memory
+ */
+
+list_t *create_node(const char *str)
+{
+	list_t *new_node;
+
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->str = strdup(str);
+	new_node->len = len(str);
+	new_node->next = NULL;
+	return (new_node);
+}
+
+/**
+ * len - Calculates the length of a string.
+ * @str: Constant string
+ * Return: The length of the string
+ */
+int len(const char *str)
+{
+	int i;
+
+	if (str == NULL)
+		return (0);
+	for (i = 0; str[i] != '\0'; i++)
+		;
+	return (i);
 }
