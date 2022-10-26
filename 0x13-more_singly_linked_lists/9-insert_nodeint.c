@@ -2,8 +2,11 @@
 
 listint_t *create_new_node(int n);
 /**
- * sum_listint - Calculates the sum of the integers in a list
+ * insert_nodeint_at_index - inserts a node at a given position, idx
  * @head: Pointer to the first element of a list
+ * @idx: the position at which the node is going to be inserted
+ * @n: the n value of the new node
+ *
  * Return: An integer representing the sum of values
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
