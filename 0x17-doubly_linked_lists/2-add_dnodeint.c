@@ -1,9 +1,10 @@
 #include "lists.h"
 
 /**
-* print_dlistint - prints all the elements of a list
+* add_dnodeint - inserts new nodes in a given list
 *
-* @h: head of the list
+* @head: head of the list
+* @n: data of the node
 * Return: the number of nodes
 */
 
@@ -15,7 +16,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	new = malloc(sizeof(dlistint_t));
 
 	if (new == NULL)
-		return NULL;
+		return (NULL);
 
 	new->n = n;
 	new->prev = NULL;
