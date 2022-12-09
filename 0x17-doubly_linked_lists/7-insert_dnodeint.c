@@ -8,47 +8,40 @@
  * @idx: index of the new node
  * @n: value of the new node
  * Return: the address of the new node, or NULL if it failed
-*/
+ */
+
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new;
-	dlistint_t *head;
+	dlistint_t *new, *tmp;
 	unsigned int i;
 
-	new = NULL;
-	if (idx == 0)
-		new = add_dnodeint(h, n);
-	else
-	{
-		head = *h;
-		i = 1;
-		if (head != NULL)
-			while (head->prev != NULL)
-				head = head->prev;
-		while (head != NULL)
-		{
-			if (i == idx)
-			{
-				if (head->next == NULL)
-					new = add_dnodeint_end(h, n);
-				else
-				{
-					new = malloc(sizeof(dlistint_t));
-					if (new != NULL)
-					{
-						new->n = n;
-						new->next = head->next;
-						new->prev = head;
-						head->next->prev = new;
-						head->next = new;
-					}
-				}
-				break;
-			}
-			head = head->next;
-			i++;
-		}
-	}
+	new = (dlistint_t *)malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
 
+	if (idx == 0)
+	{
+		new->next = (*h);
+		if (*h)
+			(*h)->prev = new;
+		(*h) = new;
+		new->prev = NULL;
+		return (new);
+	}
+	tmp = *h;
+	i = 0;
+	while (tmp && i < idx - 1)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	if (tmp == NULL)
+		return (NULL);
+	new->next = tmp->next;
+	new->prev = tmp;
+	if (tmp->next)/*edge case*/
+		tmp->next->prev = new;
+	tmp->next = new;
 	return (new);
 }
