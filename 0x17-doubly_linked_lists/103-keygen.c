@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 /**
- * * main - generate a key depending on a username for crackme5
- * * @argc: number of arguments passed
- * * @argv: arguments passed to main
- * *
- * * Return: 0 on success, 1 on error
- * */
+ * main - generate a key depending on a username for crackme5
+ * @argc: number of arguments passed
+ * @argv: arguments passed to main
+ *
+ * Return: 0 on success, 1 on error
+ */
 
 int main(int argc, char *argv[])
 {
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			b = argv[1][i];
 	srand(b ^ 14);
 	p[3] = l[rand() & 63];
-	
+
 	for (b = 0, i = 0; i < len; i++)
 		b += argv[1][i] * argv[1][i];
 	p[4] = l[(b ^ 239) & 63];
