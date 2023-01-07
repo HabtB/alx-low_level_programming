@@ -20,7 +20,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table->array = calloc(sizeof(hash_node_t *), size);
 	if (hash_table->array == NULL)
 		return (NULL);
-	
+
 	for (i = 0; i < hash_table->size; i++)
 		hash_table->array[i] = NULL;
 
