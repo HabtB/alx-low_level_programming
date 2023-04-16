@@ -1,4 +1,5 @@
 # include "search_algos.h"
+# include <math.h>
 
 /**
 * binary_search_exp - searches a value in a sorted array using
@@ -15,6 +16,9 @@ int binary_search_exp(int *array, size_t low, size_t high, int value)
 {
 	size_t i;
 	size_t mid = 0;
+
+	if (!array)
+		return (-1);
 
 	while (low <= high)
 	{
@@ -54,12 +58,12 @@ int binary_search_exp(int *array, size_t low, size_t high, int value)
 
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t pos = 1, init_pos;
+	size_t pos = 1, new_pos, init_pos;
 
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 
-	while (array[pos] <= value && pos < size)
+	while (array[pos] < value && pos < size)
 	{
 		printf("Value checked array[%li] = [%d]\n", pos, array[pos]);
 		if (array[pos] == value)
@@ -67,11 +71,9 @@ int exponential_search(int *array, size_t size, int value)
 		pos *= 2;
 	}
 	init_pos = pos / 2;
-
 	pos = (pos <= (size - 1) ? pos : (size - 1));
 	printf("Value found between indexes [%li] and [%li]\n", init_pos, (pos));
 
-	pos = binary_search_exp(array, init_pos, pos, value);
-
-	return (pos);
+	new_pos = binary_search_exp(array, init_pos, pos, value);
+	return (new_pos);
 }
