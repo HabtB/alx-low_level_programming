@@ -19,7 +19,7 @@ int binary_search_exp(int *array, size_t low, size_t high, int value)
 	if (array == NULL)
 		return (-1);
 
-	while (low <= high && value < array[high])
+	while (low <= high)
 	{
 		printf("Searching in array: ");
 		for (i = low; i <= high; i++)
@@ -74,7 +74,6 @@ int exponential_search(int *array, size_t size, int value)
 	pos = (pos <= (size - 1) ? pos : (size - 1));
 	printf("Value found between indexes [%li] and [%li]\n", init_pos, (pos));
 
-	printf("\n");
 	pos = binary_search_exp(array, init_pos, pos, value);
 
 	return (pos);
