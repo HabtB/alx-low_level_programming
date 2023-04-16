@@ -16,9 +16,6 @@ int binary_search_exp(int *array, size_t low, size_t high, int value)
 	size_t i;
 	size_t mid = 0;
 
-	if (array == NULL)
-		return (-1);
-
 	while (low <= high)
 	{
 		printf("Searching in array: ");
@@ -62,7 +59,7 @@ int exponential_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	while (array[pos] < value && pos < size)
+	while (array[pos] <= value && pos < size)
 	{
 		printf("Value checked array[%li] = [%d]\n", pos, array[pos]);
 		if (array[pos] == value)
